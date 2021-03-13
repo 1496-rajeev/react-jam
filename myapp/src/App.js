@@ -21,10 +21,21 @@ const  App = props => {
     ]})
    }
 
+   const switchHandlerReverse = (name,age) => {
+    setPersonState({persons: [
+      {name:name, age: age},
+      {name:"rajeev", age:30}
+    ]})
+   }
+
     return (
       <div className="App">
-        <Person name={personState.persons[0].name} age={personState.persons[0].age}>children test</Person>
-        <button onClick={switchHandler}>click me</button>
+        <Person 
+          name={personState.persons[0].name} 
+          age={personState.persons[0].age}
+          click={switchHandler}>children test</Person>
+        {/* <button onClick={()=>switchHandlerReverse('maxbarrow',34)}>click me to reverse</button> */}
+        <button onClick={switchHandlerReverse.bind(this,'maxbind',34)}>click me to reverse</button>
       </div>
     );
 }

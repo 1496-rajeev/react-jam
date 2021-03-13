@@ -32,7 +32,11 @@ const  App = props => {
     ]})
    }
 
-
+   const style = {
+     backgroundColor: 'blue',
+     color:'white'
+   }
+   
     return (
       <div className="App">
         <Person 
@@ -40,8 +44,10 @@ const  App = props => {
           age={personState.persons[0].age}
           click={switchHandler}
           change={inputNameHandler}>children test</Person>
-        {/* <button onClick={()=>switchHandlerReverse('maxbarrow',34)}>click me to reverse</button> */}
-        <button onClick={switchHandlerReverse.bind(this,'maxbind',34)}>click me to reverse</button>
+        {/* <button onClick={()=>switchHandlerReverse('maxbarrow',34)}>click me to arrow</button> */}
+        <button 
+          style = {style}
+          onClick={switchHandlerReverse.bind(this,'maxbind',34)}>click me to bind</button>
       </div>
     );
 }
